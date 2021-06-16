@@ -28,15 +28,18 @@ namespace JWTAuthentication_with_Refresh_Token.Controllers
             IActionResult response = Unauthorized();
             var _user = _userService.Login(user);
 
+            //we can add claim in three different ways
             if (user != null)
             {
                 var claims = new[] {
+                new Claim(ClaimTypes.NameIdentifier, "ilyas"),
+                new Claim(ClaimTypes.Name, "ilyas"),
                 new Claim(JwtRegisteredClaimNames.Email, "ilyas.varol@outlook.com.tr"),
                 new Claim("Surname", "Varol"),
                 };
 
-                var tokenString = _JWTService.GenerateJSONWebToken(claims);
-                response = Ok(new { token = tokenString });
+                var JWTToken = _JWTService.GenerateJSONWebToken(claims);
+                response = Ok(JWTToken);
             }
 
             return response;
@@ -71,6 +74,13 @@ namespace JWTAuthentication_with_Refresh_Token.Controllers
             {
                 return "Something went wrong!";
             }
+        }
+
+        [HttpPost]
+        public IActionResult RefreshToken([FromBody] RefreshTokenRequest request)
+        {
+            var token = _JWTService.RefreshJSONWebToken(request);
+            return Ok(token);
         }
     }
 }

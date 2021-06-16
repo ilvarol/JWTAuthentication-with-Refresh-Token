@@ -60,7 +60,13 @@
 			"name": "Get",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImlseWFzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6ImlseWFzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiaWx5YXMudmFyb2xAb3V0bG9vay5jb20udHIiLCJTdXJuYW1lIjoiVmFyb2wiLCJleHAiOjE2MjM4NTA5NjQsImlzcyI6IlRlc3QuY29tIiwiYXVkIjpbIlRlc3QuY29tIiwiVGVzdC5jb20iXX0.lUNSh4W4N4nIK1H0o2M1r26r8oc5nPZvUfuqXxXG2ZM",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "https://localhost:44378/api/login/get",
 					"protocol": "https",
@@ -72,6 +78,76 @@
 						"api",
 						"login",
 						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TokenHandle",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpbHlhcyIsImVtYWlsIjoiaWx5YXMudmFyb2xAb3V0bG9vay5jb20udHIiLCJTdXJuYW1lIjoiVmFyb2wiLCJleHAiOjE2MjM4NTQ0ODksImlzcyI6IlRlc3QuY29tIiwiYXVkIjoiVGVzdC5jb20ifQ.mixV22AfxA6BAfpswJMs3d7RANd2dHy8fd7xrAfrPnE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44378/api/login/handletoken",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"api",
+						"login",
+						"handletoken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefreshToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlseWFzLnZhcm9sQG91dGxvb2suY29tLnRyIiwiU3VybmFtZSI6IlZhcm9sIiwiZXhwIjoxNjIzODQ5MzAzLCJpc3MiOiJUZXN0LmNvbSIsImF1ZCI6IlRlc3QuY29tIn0.TtT4hov-guguJfchFhAPqE9ltuUzJtHeCetuwNBacZU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"AccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImlseWFzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6ImlseWFzIiwiZW1haWwiOiJpbHlhcy52YXJvbEBvdXRsb29rLmNvbS50ciIsIlN1cm5hbWUiOiJWYXJvbCIsImV4cCI6MTYyMzg1MDgzMCwiaXNzIjoiVGVzdC5jb20iLCJhdWQiOiJUZXN0LmNvbSJ9.gV8uYP5u2ij0vk7AAQqgbqMflNrpIQW55IzWpxalKcY\",\r\n    \"RefreshToken\": \"VhYbBZ/NRbXfkz3xsJiX8tlA7P9HPZ9346JL5kT62zo=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44378/api/login/refreshtoken",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"api",
+						"login",
+						"refreshtoken"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
 					]
 				}
 			},

@@ -1,0 +1,9 @@
+﻿Claims
+	Claims are the foundation behind claims-based authentication
+	Claims are name-key values and are represented via the System.Security.Claim class.
+
+Identities
+	Claims representing the same subject can be grouped together and placed in a ClaimsIdentity. (Bearer) 
+
+ClaimsPrincipal
+	It provides us to manage Identities together

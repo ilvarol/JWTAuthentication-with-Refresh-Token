@@ -1,0 +1,4 @@
+﻿https://www.c-sharpcorner.com/article/jwt-json-web-token-authentication-in-asp-net-core/
+https://medium.com/@kedren.villena/refresh-jwt-token-with-asp-net-core-c-25c2c9ee984b
+https://www.blinkingcaret.com/2018/05/30/refresh-tokens-in-asp-net-core-web-api/
+https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/
