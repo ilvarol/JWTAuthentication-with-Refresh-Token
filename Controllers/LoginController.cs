@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 
 namespace JWTAuthentication_with_Refresh_Token.Controllers
@@ -53,6 +54,23 @@ namespace JWTAuthentication_with_Refresh_Token.Controllers
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2", "value3", "value4", "value5" };
+        }
+
+        [HttpGet]
+        [Authorize]
+        public string HandleToken()
+        {
+            var currentUser = HttpContext.User;
+
+            if (currentUser.HasClaim(c => c.Type == "Surname"))
+            {
+                var mail = currentUser.Claims.FirstOrDefault(c => c.Type == "Surname").Value;
+                return mail;
+            }
+            else
+            {
+                return "Something went wrong!";
+            }
         }
     }
 }
